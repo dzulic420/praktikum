@@ -1,19 +1,26 @@
 var assert = require('assert');
+var chai = require("chai");
+var expect = chai.expect;
+var should = chai.should;
 const fizzBuzz = require("../fizzBuzz");
-describe('fizz buz problem', function () {
+describe('fizz buz problem', function() {
     it('fizzBuzz should be a function', function () {
         fizzBuzz();
     });
-    it('ako je % 3 ispisi Fizz', function () {
-        let result=fizzBuzz(3);
-        assert.equal(result,"Fizz")
+    it("za broj djeljiv sa 3 funkcija vraća Fizz", function() {
+        let result = fizzBuzz(3);
+        expect(result).to.eq("Fizz");
     });
-    it('ako je % 5 ispisi Fizz', function () {
-        let result=fizzBuzz(5);
-        assert.equal(result,"Buzz")
+    it("za broj djeljiv sa 5 funkcija vraća Buzz", function() {
+       assert.equal(fizzBuzz(5), "Buzz"); 
     });
-    it('ako je % 3 i 5 ispisi Fizz Buzz', function () {
-        let result=fizzBuzz(15);
-        assert.equal(result,"Fizz Buzz")
+    it("Za broj djeljiv sa 3 i 5 funkcija vraća FizzBuzz", function() {
+        expect(fizzBuzz(15)).to.eq("FizzBuzz");
+    });
+    it("Za ostale brojeve vratiti undefined", function() {
+        let result = fizzBuzz(4);
+        assert.strictEqual(result, undefined);
     });
 });
+
+//R-G-R
