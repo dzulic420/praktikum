@@ -6,28 +6,18 @@ let pricelist = [
 ]
 
 function logPricelist(pricelist) {
-    /*
-    Vaš zadatak je napisati funkciju koja prima 
-    gore specificiran podatak te na konzolu, z
-    a potrebe logiranja, ispisuje istu u slijedećem formatu:
-    
-    Cijena : lista perioda na koje se primjenjuje 
-    
-    (sortirano od manje do veće cijene)
-    */
     pricelist.sort((a, b) => a.price - b.price)
 
-    let print = ""
-    let previous = {}
-
-    pricelist.forEach(function (a) {
-        if (a.price == previous.price) print += ' , '
-        else print += '\n'
-        print += `${a.price} : ${a.from} : ${a.to}`
-        previous = a
+    let ispis = ""
+    let prethodni={}
+    pricelist.forEach(function (f) {
+        if (f.price == prethodni.price) ispis += ' , '
+        else ispis += '\n'
+        ispis += `${f.price} : ${f.from} : ${f.to}`
+        prethodni = f
     })
 
-    console.log(print)
+    console.log(ispis)
 }
 
 logPricelist(pricelist)
